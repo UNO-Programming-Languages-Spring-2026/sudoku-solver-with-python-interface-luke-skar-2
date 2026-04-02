@@ -4,8 +4,7 @@ from clingo.application import Application, clingo_main
 
 class SudokuApplication(Application):
     program_name = "sudoku1"
-    
-    
+
     def main(self, control: clingo.Control, files):
         control.load("sudoku.lp")
         
