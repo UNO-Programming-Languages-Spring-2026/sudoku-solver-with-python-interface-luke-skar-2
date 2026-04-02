@@ -9,6 +9,19 @@ class Sudoku:
     def __str__(self) -> str:
         s = ""
         # YOUR CODE HERE
+        
+        for row in range (1, 10):
+            row_values = []
+            
+            for col in range (1, 10):
+                row_values.append(str(self.sudoku[(row, col)]))
+            s += " ".join(row_values[0:3]) + "  " + \
+                 " ".join(row_values[3:6]) + "  " + \
+                 " ".join(row_values[6:9])
+            if row != 9:
+                s += "\n"
+            if row == 3 or row == 6:
+                s += "\n"
         return s
 
     @classmethod
