@@ -26,12 +26,15 @@ class SudokuApplication(Application):
     program_name = "sudoku6"
 
     def main(self, control: clingo.Control, files):
-        control.load("sudoku.lp")
+        with open(files[0], "r") as f:
+            s = f.read()
         
-        for file_name in files:
-            control.load(file_name)
-            
-        control.ground([("base",[])])
+        board = Sudoku.from_str(s)
+        context = Context(board)
+        
+        control.load("sudoku.lp")
+        control.load("sudoku_py.lp")    
+        control.ground([("base", [])], context = context)
         control.solve()
       
     def print_model(self, model, printer):
