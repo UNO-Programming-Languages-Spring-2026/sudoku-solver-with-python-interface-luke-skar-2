@@ -1,4 +1,3 @@
-
 import clingo 
 from clingo.application import Application, clingo_main
 
@@ -17,4 +16,4 @@ class SudokuApplication(Application):
         
         
 if __name__ == "__main__":
-    clingo_main(clingo_main(SudokuApplication()))
+    clingo_main(SudokuApplication())
