@@ -1,4 +1,4 @@
-#Final answer part a
+#Final answer part A
 import clingo 
 from clingo.application import Application, clingo_main
 
@@ -13,7 +13,7 @@ class SudokuApplication(Application):
             
         control.ground([("base",[])])
         control.solve()
-     #part b   
+     #part B   
     def print_model(self, model, printer):
         atoms = model.symbols(shown = True)
         atoms = sorted(atoms, key = str)
