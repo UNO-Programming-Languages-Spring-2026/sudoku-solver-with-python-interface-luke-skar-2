@@ -1,0 +1,1 @@
+tmp(@initial()). initial(X, Y, N) :- tmp((X, Y, N)).
