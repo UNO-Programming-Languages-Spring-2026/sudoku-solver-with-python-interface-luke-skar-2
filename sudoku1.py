@@ -1,4 +1,4 @@
-#Final answer
+#Final answer part a
 import clingo 
 from clingo.application import Application, clingo_main
 
@@ -13,6 +13,11 @@ class SudokuApplication(Application):
             
         control.ground([("base",[])])
         control.solve()
+     #part b   
+    def print_model(self, model, printer):
+        atoms = model.symbols(shown = True)
+        atoms = sorted(atoms, key = str)
+        print(" ".join(str(atom) for atom in atoms))    
         
         
 if __name__ == "__main__":
