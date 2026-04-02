@@ -28,6 +28,13 @@ class Sudoku:
     def from_str(cls, s: str) -> "Sudoku":
         sudoku = {}
         # YOUR CODE HERE
+        rows = [line for line in s.splitlines() if line.strip() != ""]
+        
+        for row_index, line in enumerate(rows, start = 1):
+            values = line.split()
+            for col_index, value in enumerate(values, start = 1):
+                if value != "-":
+                    sudoku[(row_index, col_index)] = int(value)
         return cls(sudoku)
 
     @classmethod
